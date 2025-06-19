@@ -52,8 +52,8 @@ export default function Project() {
                                             <SwiperSlide>  <img src={login1} alt="" className='w-220 pb-5  rounded-[9px]' /></SwiperSlide>
                                             <SwiperSlide>  <img src={signin1} alt="" className='w-220 pb-5  rounded-[9px]' /></SwiperSlide>
                                              <p className='font-bold  '>Snack bar's App</p>
-                                    <p className='m-1  text-white '>Lorem ipsum dolor sit amet, consectetur adipisicing<br /> Illo 
-                                    consectetur adipisicing elit. Voluptates?</p>
+                                    <p className='m-1  text-white '>This is  my first project when i began of a languages programmation React js includes a fonctionnality crud (CREAD,READ ,UPDATE) 
+                                   </p>
                                             <SwiperSlide>  <img src={home1} alt="" className='w-220 pb-5  rounded-[9px]' /></SwiperSlide>
                                              <SwiperSlide>  <img src={client1} alt="" className='w-220 pb-5  rounded-[9px]' /></SwiperSlide>
                                              <SwiperSlide>  <img src={produit} alt="" className='w-220 pb-5  rounded-[9px]' /></SwiperSlide>
@@ -96,8 +96,7 @@ export default function Project() {
                                             <SwiperSlide>  <img src={login2} alt="" className='w-240 pb-5  rounded-[9px]' /></SwiperSlide>
                                             <SwiperSlide>  <img src={signin2} alt="" className='w-240 pb-5  rounded-[9px]' /></SwiperSlide>
                                              <p className='font-bold'>Road Trip</p>
-                                    <p className='m-1  text-white '>Lorem ipsum dolor sit amet, consectetur adipisicing<br /> Illo 
-                                    consectetur adipisicing elit. Voluptates?</p>
+                                    <p className='m-1  text-white '>This is a website trip.Who invite everyone to visite madagascar and his nature</p>
                                             <SwiperSlide>  <img src={home2} alt="" className='w-245 pb-5  rounded-[9px]' /></SwiperSlide>
                                              <SwiperSlide>  <img src={gallery2} alt="" className='w-245 pb-5  rounded-[9px]' /></SwiperSlide>
                                              <SwiperSlide>  <img src={contact2} alt="" className='w-245 pb-5  rounded-[9px]' /></SwiperSlide>
