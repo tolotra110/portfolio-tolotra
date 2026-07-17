@@ -1,0 +1,147 @@
+export const translations = {
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      skills: "Skills",
+      project: "Project",
+    },
+    home: {
+      greeting: "Hi, guys",
+      role: "I'm Web Developer",
+      intro1: "Crafting modern, performant, and delightful digital",
+      intro2: "experiences with a passion for clean code and",
+      intro3: "intuitive design.",
+      contact: "Contact me",
+      download: "Download CV",
+    },
+    about: {
+      title: "About Me",
+      subtitle: "Learn more about who I am and what I do",
+      p1: "I specialize in building scalable web applications. My toolkit includes",
+      p1b: "ReactJS, Node.js, Mysql and more—blending technical",
+      p1c: "expertise with a keen eye for design.",
+      p2: "When I'm not coding, you'll find me exploring foreign language, music and technology,",
+      p2b: "fueling my creativity, drive and enhancing my communication skills aswell.",
+    },
+    skills: {
+      title: "My Skills",
+      subtitle: "Technologies I work with",
+      webDev: "Framework & Libraries web Developments",
+      dbms: "Database Management System",
+      devTools: "Dev tools",
+      html: "Html",
+      css: "Css",
+      js: "Javascript",
+      mysql: "Mysql",
+      react: "React js",
+      node: "Node js",
+      material: "Material Ui",
+      tailwind: "Tailwind",
+      postman: "Postman",
+      git: "Git",
+    },
+    project: {
+      title: "My Latest Project",
+      subtitle: "Check out some of my recent work",
+      project1Name: "Snack bar's App",
+      project1Desc:
+        "This is my first project when i began of a languages programmation React js includes a fonctionnality crud (CREAD,READ ,UPDATE)",
+      project2Name: "Road Trip",
+      project2Desc:
+        "This is a website trip. Who invite everyone to visite madagascar and his nature",
+      react: "React js",
+      json: "Json Server",
+      node: "Node js",
+      mysql: "Mysql",
+      github: "View in Github",
+    },
+    contact: {
+      title: "Why choose to work with Tolotra?",
+      reasons: "There are Three Reasons:",
+      proficiency: "Technical Proficiency:",
+      proficiencyDesc:
+        "Crafting seamless code and mastering cutting-edge technologies to bring your digital vision to life",
+      communication: "Clear Communication:",
+      communicationDesc:
+        "Articulating complex technical concepts with clarity ,ensuring a shared understanding for successful project collaboration",
+      proactivity: "Proactivity:",
+      proactivityDesc:
+        "Anticipating challenges ,providing solution before initiative to enhance project outcomes",
+    },
+  },
+  fr: {
+    nav: {
+      home: "Accueil",
+      about: "À propos",
+      skills: "Compétences",
+      project: "Projets",
+    },
+    home: {
+      greeting: "Salut, les amis",
+      role: "Je suis Développeur Web",
+      intro1: "Je crée des expériences numériques modernes, performantes",
+      intro2: "et agréables avec une passion pour un code propre",
+      intro3: "et un design intuitif.",
+      contact: "Me contacter",
+      download: "Télécharger CV",
+    },
+    about: {
+      title: "À propos de moi",
+      subtitle: "En savoir plus sur qui je suis et ce que je fais",
+      p1: "Je me spécialise dans la création d'applications web évolutives. Ma boîte à outils comprend",
+      p1b: "ReactJS, Node.js, Mysql et plus—alliant compétences techniques",
+      p1c: "et un œil attentif pour le design.",
+      p2: "Quand je ne code pas, vous me trouverez en train d'explorer les langues étrangères, la musique et la technologie,",
+      p2b: "nourrissant ma créativité, ma motivation et améliorant mes compétences de communication.",
+    },
+    skills: {
+      title: "Mes Compétences",
+      subtitle: "Les technologies que j'utilise",
+      webDev: "Framework & Bibliothèques de développement web",
+      dbms: "Système de gestion de base de données",
+      devTools: "Outils de développement",
+      html: "Html",
+      css: "Css",
+      js: "Javascript",
+      mysql: "Mysql",
+      react: "React js",
+      node: "Node js",
+      material: "Material Ui",
+      tailwind: "Tailwind",
+      postman: "Postman",
+      git: "Git",
+    },
+    project: {
+      title: "Mes derniers projets",
+      subtitle: "Découvrez quelques-uns de mes travaux récents",
+      project1Name: "Application Snack bar",
+      project1Desc:
+        "C'est mon premier projet quand j'ai commencé la programmation avec React js, incluant une fonctionnalité CRUD (CRÉER, LIRE, MODIFIER)",
+      project2Name: "Road Trip",
+      project2Desc:
+        "C'est un site web de voyage qui invite chacun à visiter Madagascar et sa nature",
+      react: "React js",
+      json: "Json Server",
+      node: "Node js",
+      mysql: "Mysql",
+      github: "Voir sur Github",
+    },
+    contact: {
+      title: "Pourquoi choisir de travailler avec Tolotra ?",
+      reasons: "Il y a trois raisons :",
+      proficiency: "Compétence technique :",
+      proficiencyDesc:
+        "Créer un code fluide et maîtriser les technologies de pointe pour donner vie à votre vision numérique",
+      communication: "Communication claire :",
+      communicationDesc:
+        "Articuler des concepts techniques complexes avec clarté, assurant une compréhension commune pour une collaboration réussie",
+      proactivity: "Proactivité :",
+      proactivityDesc:
+        "Anticiper les défis, proposer des solutions de façon proactive pour améliorer les résultats du projet",
+    },
+  },
+} as const;
+
+export type Language = keyof typeof translations;
+export type TranslationKey = keyof typeof translations["en"];

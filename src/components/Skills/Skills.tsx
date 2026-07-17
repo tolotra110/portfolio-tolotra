@@ -10,60 +10,60 @@ import npm from '../assets/Postman.png'
 
 import git from '../assets/git.png'
 import {motion} from 'framer-motion'
+import { useTranslation } from '../../i18n/LanguageContext'
 
 export default function Skills() {
+  const { t } = useTranslation();
   return (
     <>
-    <section id='skills' className="">
+    <section id='skills' className="px-
+  6 ">
 
         <motion.p
                initial={{opacity:0,x:-100}}
             whileInView={{opacity:1,x:0}}
-            transition={{duration:2}} className=" justify-center flex text-3xl text-purple-700 "> My Skills</motion.p>
+            transition={{duration:2}} className=" justify-center flex text-2xl md:text-3xl text-purple-700 "> {t("skills", "title")}</motion.p>
         <motion.p
                initial={{opacity:0,x:-100}}
             whileInView={{opacity:1,x:0}}
-            transition={{duration:2}} className='ml-133 mt-2 text-2xl'>Technologies I work with</motion.p>
-        <div  className='grid grid-cols-2  gap-1 '>
-          
-           
-          
-        
+            transition={{duration:2}} className='mt-2 text-lg md:text-2xl text-center'>{t("skills", "subtitle")}</motion.p>
+        <div  className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 max-w-5xl mx-auto'>
+
           <motion.div
            initial={{opacity:0,x:-100}}
             whileInView={{opacity:1,x:0}}
-            transition={{duration:2}}  className='border-2 border-purple-800 rounded-[12px] pl-5 py-2  bg-transparent mt-5 ml- pl- w-164'>
-             <h1 className='pl-24  '>Framework  & Librairies web Developpements</h1>
-            <div className='flex flex row gap-25 mt-5 ml-10'>
-              <div className='pl-1'>
-              <motion.img src={html} alt="" className='w-20 ' />
-              <p className=' ml-5'>Html</p>
-            </div>
-            <div>
-              <img src={css} alt="" className='w-20' />
-              <p className='ml-6'>Css</p>
-            </div>
-            <div>
-              <img src={js} alt="" className='w-20' />
-              <p className=''>Javascript</p>
-            </div>
-            
-            </div>
+            transition={{duration:2}}  className='border-2 border-purple-800 rounded-[12px] p-5 bg-transparent'>
+             <h1 className='text-center font-semibold mb-4'>{t("skills", "webDev")}</h1>
+             <div className='flex flex-row flex-wrap justify-center gap-6'>
+               <div className='flex flex-col items-center'>
+               <motion.img src={html} alt={t("skills", "html")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "html")}</p>
+             </div>
+             <div className='flex flex-col items-center'>
+               <img src={css} alt={t("skills", "css")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "css")}</p>
+             </div>
+             <div className='flex flex-col items-center'>
+               <img src={js} alt={t("skills", "js")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "js")}</p>
+             </div>
+
+             </div>
 
           </motion.div>
 
            <motion.div
             initial={{opacity:0,x:-100}}
             whileInView={{opacity:1,x:0}}
-            transition={{duration:2}}  className='border-2 rounded-[12px] pl-5 py-2  bg-transparent border-purple-700 mt-5 ml- pl- w-164'>
-             <h1 className='pl-44  '>Database Management System</h1>
-            <div className='flex flex row gap-25 mt-5 ml-7'>
-              <div>
-              <img src={Mysql} alt="" className='w-20' />
-              <p className=' ml-4'>Mysql</p>
-            </div>
-            
-            </div>
+            transition={{duration:2}}  className='border-2 rounded-[12px] p-5 bg-transparent border-purple-700'>
+             <h1 className='text-center font-semibold mb-4'>{t("skills", "dbms")}</h1>
+             <div className='flex flex-row flex-wrap justify-center gap-6'>
+               <div className='flex flex-col items-center'>
+               <img src={Mysql} alt={t("skills", "mysql")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "mysql")}</p>
+             </div>
+
+             </div>
 
           </motion.div>
 
@@ -72,27 +72,27 @@ export default function Skills() {
                   initial={{opacity:0,x:-100}}
             whileInView={{opacity:1,x:0}}
             transition={{duration:2}}
-            className='border-2 border-purple-700 rounded-[12px] pl-5 py-2  bg-transparent mt-6 ml- pl- w-164'>
-             <h1 className='pl-24  '>Framework  & Librairies web Developpements</h1>
-            <div className='flex flex row gap-25 mt-5 ml-2'>
-              <div>
-              <img src={react} alt="" className='w-20' />
-              <p className='ml-3'>React js</p>
-            </div>
-            <div>
-              <img src={node} alt="" className='w-20' />
-              <p className='ml-3'>Node js</p>
-            </div>
-            <div>
-              <img src={material} alt="" className='w-20' />
-              <p className=''>Material Ui</p>
-            </div>
-            <div className=''>
-              <img src={tailwind} alt="" className='w-20' />
-              <p className=''>Tailwind</p>
-            </div>
-            
-            </div>
+            className='border-2 border-purple-700 rounded-[12px] p-5 bg-transparent'>
+             <h1 className='text-center font-semibold mb-4'>{t("skills", "webDev")}</h1>
+             <div className='flex flex-row flex-wrap justify-center gap-6'>
+               <div className='flex flex-col items-center'>
+               <img src={react} alt={t("skills", "react")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "react")}</p>
+             </div>
+             <div className='flex flex-col items-center'>
+               <img src={node} alt={t("skills", "node")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "node")}</p>
+             </div>
+             <div className='flex flex-col items-center'>
+               <img src={material} alt={t("skills", "material")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "material")}</p>
+             </div>
+             <div className='flex flex-col items-center'>
+               <img src={tailwind} alt={t("skills", "tailwind")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "tailwind")}</p>
+             </div>
+
+             </div>
 
           </motion.div>
 
@@ -100,28 +100,27 @@ export default function Skills() {
            <motion.div
                   initial={{opacity:0,x:-100}}
             whileInView={{opacity:1,x:0}}
-            transition={{duration:2}} className='border-2  border-purple-800 rounded-[12px] pl-5 py-2  bg-transparent mt-6 ml- pl- w-164'>
-             <h1 className='pl-68  '>Dev tools</h1>
-            <div className='flex flex row gap-25 mt-5 ml-7'>
-              <div>
-              <img src={npm} alt="" className='w-20' />
-              <p className=' ml-2'>Postman</p>
-            </div>
-            <div>
-              <img src={git} alt="" className='w-20' />
-              <p className=' ml-7'>Git</p>
-            </div>
-            
-            </div>
+            transition={{duration:2}} className='border-2 border-purple-800 rounded-[12px] p-5 bg-transparent'>
+             <h1 className='text-center font-semibold mb-4'>{t("skills", "devTools")}</h1>
+             <div className='flex flex-row flex-wrap justify-center gap-6'>
+               <div className='flex flex-col items-center'>
+               <img src={npm} alt={t("skills", "postman")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "postman")}</p>
+             </div>
+             <div className='flex flex-col items-center'>
+               <img src={git} alt={t("skills", "git")} className='w-16 md:w-20' />
+               <p className='mt-2'>{t("skills", "git")}</p>
+             </div>
+
+             </div>
 
           </motion.div>
-          
-          
-        
+
+
         </div>
-        
+
     </section>
-    
+
     </>
   )
 }
