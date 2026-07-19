@@ -1,105 +1,117 @@
 import { useState } from "react";
 import { useTranslation } from "../../i18n/LanguageContext";
+import { FaSun, FaMoon } from "react-icons/fa6";
 
 export default function Navbar() {
-  const { language, setLanguage, t } = useTranslation();
+  const { language, setLanguage, t, theme, toggleTheme } = useTranslation();
   const [open, setOpen] = useState(false);
+  const isLight = theme === "light";
+
+  const linkBase = `px-3 py-2 rounded-full transition-colors ${
+    isLight ? "text-purple-700 hover:bg-purple-100" : "text-purple-200 hover:bg-white/10"
+  }`;
 
   const links = (
     <>
-      <a
-        href="#home"
-        onClick={() => setOpen(false)}
-        className="text-purple-800 bg-transparent border-2 border-none"
-      >
+      <a href="#home" onClick={() => setOpen(false)} className={linkBase}>
         {t("nav", "home")}
       </a>
-      <a href="#about" onClick={() => setOpen(false)}>
+      <a href="#about" onClick={() => setOpen(false)} className={linkBase}>
         {t("nav", "about")}
       </a>
-      <a href="#skills" onClick={() => setOpen(false)}>
+      <a href="#skills" onClick={() => setOpen(false)} className={linkBase}>
         {t("nav", "skills")}
       </a>
-      <a href="#projet" onClick={() => setOpen(false)}>
+      <a href="#services" onClick={() => setOpen(false)} className={linkBase}>
+        {t("nav", "services")}
+      </a>
+      <a href="#projet" onClick={() => setOpen(false)} className={linkBase}>
         {t("nav", "project")}
       </a>
     </>
   );
 
+  const langActive = "bg-blue-700 text-white font-semibold";
+  const langInactive = isLight
+    ? "text-gray-500 hover:text-gray-800"
+    : "text-gray-400 hover:text-white";
+
+  const navSurface = isLight
+    ? "bg-white border-purple-200 shadow-[0_8px_30px_rgba(109,40,217,0.12)]"
+    : "bg-[#11012e]/60 border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]";
+
+  const iconBtn = "text-purple-300 border-white/15 hover:bg-white/10";
+  const burger = "bg-white";
+
   return (
-    <>
-      <section
-        id="navbar"
-        className="flex flex-col md:flex-row items-center md:justify-between px-4 md:px-6 py-3 gap-3 md:gap-4"
-      >
-        <div className="w-full md:w-auto flex items-center justify-between">
-          <p className="text-2xl md:text-3xl">
-            <span className="text-blue-400">T</span>olotra.
-          </p>
+    <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+      <div className={`relative w-full max-w-5xl flex items-center justify-between gap-4 px-5 py-3 rounded-full border backdrop-blur-lg ${navSurface}`}>
+        <p className="text-xl md:text-2xl font-semibold whitespace-nowrap">
+          <span className={isLight ? "text-purple-700" : "text-blue-400"}>T</span>olotra.
+        </p>
 
-          <div className="flex items-center gap-3 md:gap-0">
-            <li className="flex flex-row items-center gap-1 list-none md:border-l md:border-gray-300 md:pl-4">
-              <button
-                onClick={() => setLanguage("en")}
-                aria-label="Switch to English"
-                className={`cursor-pointer px-2 py-1 rounded ${
-                  language === "en"
-                    ? "text-blue-700 font-bold bg-blue-50"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                EN
-              </button>
-              <span className="text-gray-400">|</span>
-              <button
-                onClick={() => setLanguage("fr")}
-                aria-label="Passer en français"
-                className={`cursor-pointer px-2 py-1 rounded ${
-                  language === "fr"
-                    ? "text-blue-700 font-bold bg-blue-50"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                FR
-              </button>
-            </li>
+        <ul className="hidden md:flex flex-row items-center gap-1">{links}</ul>
 
+        <div className="flex items-center gap-2 md:gap-3">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle light mode"
+            className={`w-9 h-9 flex items-center justify-center rounded-full border transition-colors ${iconBtn}`}
+          >
+            {theme === "dark" ? <FaSun /> : <FaMoon />}
+          </button>
+
+          <div className="flex items-center gap-1 rounded-full border border-white/15 px-1 py-0.5">
             <button
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-              aria-expanded={open}
-              className="md:hidden flex flex-col gap-1 cursor-pointer p-2"
+              onClick={() => setLanguage("en")}
+              aria-label="Switch to English"
+              className={`cursor-pointer px-3 py-1 rounded-full text-sm transition-colors ${
+                language === "en" ? langActive : langInactive
+              }`}
             >
-              <span
-                className={`block w-6 h-0.5 bg-white transition-transform ${
-                  open ? "rotate-45 translate-y-1.5" : ""
-                }`}
-              />
-              <span
-                className={`block w-6 h-0.5 bg-white transition-opacity ${
-                  open ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block w-6 h-0.5 bg-white transition-transform ${
-                  open ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
-              />
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage("fr")}
+              aria-label="Passer en français"
+              className={`cursor-pointer px-3 py-1 rounded-full text-sm transition-colors ${
+                language === "fr" ? langActive : langInactive
+              }`}
+            >
+              FR
             </button>
           </div>
-        </div>
 
-        <ul className="hidden md:flex flex-row flex-wrap items-center justify-center gap-3 md:gap-6">
-          <a href="#navbar" className="hidden">Navbar</a>
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="md:hidden flex flex-col gap-1 cursor-pointer p-2"
+          >
+            <span
+              className={`block w-6 h-0.5 ${burger} transition-transform ${
+                open ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 ${burger} transition-opacity ${
+                open ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 ${burger} transition-transform ${
+                open ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <ul className={`md:hidden absolute top-20 left-4 right-4 flex flex-col items-center gap-2 p-4 rounded-2xl border backdrop-blur-lg shadow-xl ${navSurface}`}>
           {links}
         </ul>
-
-        {open && (
-          <ul className="flex md:hidden flex-col items-center gap-4 w-full mt-2">
-            {links}
-          </ul>
-        )}
-      </section>
-    </>
+      )}
+    </nav>
   );
 }

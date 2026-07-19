@@ -1,9 +1,171 @@
 @import "tailwindcss";
-*{
-    box-sizing: border-box;
-    font-family: 'Poppins';
+@theme {
+  --color-bg: #11012e;
+  --color-bg-soft: #1b0942;
+  --color-accent: #7c3aed;
+  --color-accent-soft: #a855f7;
+  --color-primary: #2563eb;
 }
-body{
-    background-color: rgb(17, 1, 46);
-    color: white;
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
+html {
+  scroll-padding-top: 110px;
+}
+body {
+  background-color: var(--color-bg);
+  color: white;
+  min-height: 100vh;
+}
+section {
+  scroll-margin-top: 90px;
+}
+
+/* ===== Light mode ===== */
+html.light body {
+  background: #ffffff;
+  color: #6d28d9;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.10), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.10), transparent 40%);
+  background-size: 200% 200%;
+  animation: lightShift 18s ease-in-out infinite;
+}
+@keyframes lightShift {
+  0%, 100% { background-position: 0% 0%, 100% 100%; }
+  50% { background-position: 100% 50%, 0% 50%; }
+}
+html.light .blob {
+  opacity: 0.14;
+}
+html.light .blob-1 { background: #c4b5fd; }
+html.light .blob-2 { background: #93c5fd; }
+html.light .blob-3 { background: #d8b4fe; }
+html.light .swiper-pagination-bullet { background: rgba(109, 40, 217, 0.3); }
+html.light .swiper-pagination-bullet-active { background: #6d28d9; }
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.45;
+  will-change: transform;
+}
+.blob-1 {
+  width: 22rem;
+  height: 22rem;
+  background: #7c3aed;
+  top: -4rem;
+  left: -6rem;
+  animation: float1 14s ease-in-out infinite;
+}
+.blob-2 {
+  width: 20rem;
+  height: 20rem;
+  background: #2563eb;
+  bottom: -6rem;
+  right: -4rem;
+  animation: float2 18s ease-in-out infinite;
+}
+.blob-3 {
+  width: 16rem;
+  height: 16rem;
+  background: #a855f7;
+  top: 40%;
+  left: 45%;
+  animation: float3 16s ease-in-out infinite;
+}
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -30px) scale(1.1); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 50px) scale(1.2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none; }
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: #a855f7;
+}
+
+/* ===== Animated perspective grid ===== */
+.bg-grid {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  width: 200%;
+  height: 80%;
+  transform: translateX(-50%) perspective(420px) rotateX(60deg);
+  background-image:
+    linear-gradient(to right, rgba(168, 85, 247, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridScroll 4s linear infinite;
+  mask-image: linear-gradient(to top, #000 10%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 80%);
+  opacity: 0.7;
+}
+@keyframes gridScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid { animation: none; }
+}
+
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 9999px;
+    will-change: transform;
+  }
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: #a855f7;
+    margin: -4px 0 0 -4px;
+  }
+  .cursor-ring {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+    border: 2px solid rgba(168, 85, 247, 0.7);
+    transition: width 0.2s, height 0.2s, margin 0.2s, background-color 0.2s;
+  }
+  .cursor-ring--active {
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 1);
+  }
+}
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+

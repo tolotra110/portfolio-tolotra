@@ -4,6 +4,7 @@ export const translations = {
       home: "Home",
       about: "About",
       skills: "Skills",
+      services: "Services",
       project: "Project",
     },
     home: {
@@ -27,9 +28,9 @@ export const translations = {
     skills: {
       title: "My Skills",
       subtitle: "Technologies I work with",
-      webDev: "Framework & Libraries web Developments",
-      dbms: "Database Management System",
-      devTools: "Dev tools",
+      frontend: "Frontend",
+      backend: "Backend & Database",
+      tools: "Tools",
       html: "Html",
       css: "Css",
       js: "Javascript",
@@ -37,9 +38,11 @@ export const translations = {
       react: "React js",
       node: "Node js",
       material: "Material Ui",
+      angular: "Angular",
       tailwind: "Tailwind",
       postman: "Postman",
       git: "Git",
+      postgresql: "PostgreSQL",
     },
     project: {
       title: "My Latest Project",
@@ -55,6 +58,13 @@ export const translations = {
       node: "Node js",
       mysql: "Mysql",
       github: "View in Github",
+      project3Name: "Gestion Acte Vente",
+      project3Desc:
+        "An application for managing sales acts, including CRUD functionality for products, clients and invoices.",
+    },
+    footer: {
+      tagline: "Crafting modern, performant and delightful digital experiences.",
+      rights: "All rights reserved.",
     },
     contact: {
       title: "Why choose to work with Tolotra?",
@@ -69,12 +79,23 @@ export const translations = {
       proactivityDesc:
         "Anticipating challenges ,providing solution before initiative to enhance project outcomes",
     },
+    services: {
+      title: "My Services",
+      subtitle: "What I can do for you",
+      webTitle: "Web Development",
+      webDesc: "Building fast, responsive and modern websites using React, Node.js and clean code practices.",
+      uiTitle: "UI/UX Design",
+      uiDesc: "Designing intuitive and attractive interfaces with Tailwind CSS and Material UI for a great user experience.",
+      apiTitle: "API & Database",
+      apiDesc: "Creating robust REST APIs and managing databases like MySQL for scalable backend solutions.",
+    },
   },
   fr: {
     nav: {
       home: "Accueil",
       about: "À propos",
       skills: "Compétences",
+      services: "Services",
       project: "Projets",
     },
     home: {
@@ -98,9 +119,9 @@ export const translations = {
     skills: {
       title: "Mes Compétences",
       subtitle: "Les technologies que j'utilise",
-      webDev: "Framework & Bibliothèques de développement web",
-      dbms: "Système de gestion de base de données",
-      devTools: "Outils de développement",
+      frontend: "Frontend",
+      backend: "Backend & Base de données",
+      tools: "Outils",
       html: "Html",
       css: "Css",
       js: "Javascript",
@@ -108,9 +129,11 @@ export const translations = {
       react: "React js",
       node: "Node js",
       material: "Material Ui",
+      angular: "Angular",
       tailwind: "Tailwind",
       postman: "Postman",
       git: "Git",
+      postgresql: "PostgreSQL",
     },
     project: {
       title: "Mes derniers projets",
@@ -126,6 +149,13 @@ export const translations = {
       node: "Node js",
       mysql: "Mysql",
       github: "Voir sur Github",
+      project3Name: "Gestion Acte Vente",
+      project3Desc:
+        "Une application de gestion des actes de vente, incluant une fonctionnalité CRUD pour les produits, clients et factures.",
+    },
+    footer: {
+      tagline: "Je crée des expériences numériques modernes, performantes et agréables.",
+      rights: "Tous droits réservés.",
     },
     contact: {
       title: "Pourquoi choisir de travailler avec Tolotra ?",
@@ -139,6 +169,16 @@ export const translations = {
       proactivity: "Proactivité :",
       proactivityDesc:
         "Anticiper les défis, proposer des solutions de façon proactive pour améliorer les résultats du projet",
+    },
+    services: {
+      title: "Mes Services",
+      subtitle: "Ce que je peux faire pour vous",
+      webTitle: "Développement Web",
+      webDesc: "Création de sites web rapides, responsives et modernes avec React, Node.js et des pratiques de code propre.",
+      uiTitle: "UI/UX Design",
+      uiDesc: "Conception d'interfaces intuitives et attrayantes avec Tailwind CSS et Material UI pour une excellente expérience utilisateur.",
+      apiTitle: "API & Base de données",
+      apiDesc: "Création d'API REST robustes et gestion de bases de données comme MySQL pour des solutions backend évolutives.",
     },
   },
 } as const;
